@@ -1,7 +1,7 @@
 package at.willhaben.sp.hexample.domain.jobsearch.ports
 
-import at.willhaben.sp.hexample.domain.model.JobItem
+import at.willhaben.sp.hexample.domain.model.JobOffer
 
 interface JobSearchDatabasePort {
-    fun searchForJobsWithTitle(title: String?): List<JobItem>
+    fun searchForJobsWithTitle(title: String?): List<JobOffer>
 }

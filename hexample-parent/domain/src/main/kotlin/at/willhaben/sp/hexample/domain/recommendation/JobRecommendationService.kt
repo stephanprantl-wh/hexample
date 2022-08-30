@@ -1,6 +1,6 @@
 package at.willhaben.sp.hexample.domain.recommendation
 
-import at.willhaben.sp.hexample.domain.model.JobItem
+import at.willhaben.sp.hexample.domain.model.JobOffer
 import at.willhaben.sp.hexample.domain.recommendation.ports.JobRecommendationDatabasePort
 import at.willhaben.sp.hexample.domain.recommendation.ports.JobRecommendationEnginePort
 import at.willhaben.sp.hexample.domain.recommendation.ports.JobRecommendationServicePort
@@ -12,7 +12,7 @@ class JobRecommendationService(
     private val jobRecommendationDatabase: JobRecommendationDatabasePort
 ) : JobRecommendationServicePort {
 
-    override fun getRecommendationsForUser(userId: Int): List<JobItem> {
+    override fun getRecommendationsForUser(userId: Int): List<JobOffer> {
         val recommendedJobsForUser = jobRecommendationEngine.getRecommendedJobIdsForUserId(userId)
         return jobRecommendationDatabase.getJobsForIdList(recommendedJobsForUser)
     }

@@ -1,7 +1,7 @@
 package at.willhaben.sp.hexample.domain.recommendation.ports
 
-import at.willhaben.sp.hexample.domain.model.JobItem
+import at.willhaben.sp.hexample.domain.model.JobOffer
 
 interface JobRecommendationServicePort {
-    fun getRecommendationsForUser(userId: Int): List<JobItem>
+    fun getRecommendationsForUser(userId: Int): List<JobOffer>
 }

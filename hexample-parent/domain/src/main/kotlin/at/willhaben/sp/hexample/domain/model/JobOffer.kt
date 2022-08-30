@@ -2,7 +2,7 @@ package at.willhaben.sp.hexample.domain.model
 
 import java.time.LocalDate
 
-data class JobItem(
+data class JobOffer(
     val title: String,
     val publishingDate: LocalDate? = null
 ) {

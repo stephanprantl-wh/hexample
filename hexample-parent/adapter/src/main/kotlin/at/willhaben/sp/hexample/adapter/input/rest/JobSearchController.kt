@@ -1,7 +1,7 @@
 package at.willhaben.sp.hexample.adapter.input.rest
 
 import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchServicePort
-import at.willhaben.sp.hexample.domain.model.JobItem
+import at.willhaben.sp.hexample.domain.model.JobOffer
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -19,7 +19,7 @@ class JobSearchController(
         return mapResult(result)
     }
 
-    private fun mapResult(result: List<JobItem>): JobSearchResponse {
+    private fun mapResult(result: List<JobOffer>): JobSearchResponse {
         val resultItems = result.map {
             JobResponseItem(
                 title = it.title
