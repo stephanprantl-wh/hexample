@@ -1,4 +1,4 @@
-package at.willhaben.sp.hexample.domain.recommendation
+package at.willhaben.sp.hexample.domain.recommendation.services
 
 import at.willhaben.sp.hexample.domain.model.JobOffer
 import at.willhaben.sp.hexample.domain.recommendation.ports.JobRecommendationDatabasePort

@@ -1,4 +1,4 @@
-package at.willhaben.sp.hexample.domain.jobsearch
+package at.willhaben.sp.hexample.domain.jobsearch.services
 
 import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchDatabasePort
 import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchServicePort
