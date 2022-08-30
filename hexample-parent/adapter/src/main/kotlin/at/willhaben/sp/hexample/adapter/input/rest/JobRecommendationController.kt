@@ -1,35 +1,35 @@
 package at.willhaben.sp.hexample.adapter.input.rest
 
-import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchServicePort
 import at.willhaben.sp.hexample.domain.model.JobItem
+import at.willhaben.sp.hexample.domain.recommendation.ports.JobRecommendationServicePort
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/search")
-class JobSearchController(
-    private val jobSearchService: JobSearchServicePort
+@RequestMapping("/recommendation")
+class JobRecommendationController(
+    private val jobRecommendationService: JobRecommendationServicePort
 ) {
 
     @GetMapping
-    fun search(@RequestParam title: String? = null): JobSearchResponse {
-        val result = jobSearchService.searchForJobsWithTitle(title)
+    fun getRecommendationsForUser(@RequestParam userId: Int): JobRecommendationResponse {
+        val result = jobRecommendationService.getRecommendationsForUser(userId)
         return mapResult(result)
     }
 
-    private fun mapResult(result: List<JobItem>): JobSearchResponse {
+    private fun mapResult(result: List<JobItem>): JobRecommendationResponse {
         val resultItems = result.map {
             JobResponseItem(
                 title = it.title
             )
         }
-        return JobSearchResponse(items = resultItems)
+        return JobRecommendationResponse(items = resultItems)
     }
 
 }
 
-data class JobSearchResponse(
+data class JobRecommendationResponse(
     val items: List<JobResponseItem> = emptyList()
 )

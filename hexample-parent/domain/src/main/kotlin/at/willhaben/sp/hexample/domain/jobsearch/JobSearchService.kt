@@ -2,6 +2,7 @@ package at.willhaben.sp.hexample.domain.jobsearch
 
 import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchDatabasePort
 import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchServicePort
+import at.willhaben.sp.hexample.domain.model.JobItem
 import org.springframework.stereotype.Service
 
 @Service
@@ -12,7 +13,3 @@ class JobSearchService(
         return jobSearchDatabasePort.searchForJobsWithTitle(title)
     }
 }
-
-data class JobItem(
-    val title: String
-)
