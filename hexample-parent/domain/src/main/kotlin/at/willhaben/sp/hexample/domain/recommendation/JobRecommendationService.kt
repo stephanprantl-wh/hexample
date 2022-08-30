@@ -13,7 +13,7 @@ class JobRecommendationService(
 ) : JobRecommendationServicePort {
 
     override fun getRecommendationsForUser(userId: Int): List<JobItem> {
-        val recommendedJobsForUser = jobRecommendationEngine.getJobIdsForUserId(userId)
+        val recommendedJobsForUser = jobRecommendationEngine.getRecommendedJobIdsForUserId(userId)
         return jobRecommendationDatabase.getJobsForIdList(recommendedJobsForUser)
     }
 

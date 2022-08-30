@@ -7,7 +7,7 @@ import kotlin.streams.toList
 
 @Repository
 class RecommendationEngineAdapter : JobRecommendationEnginePort {
-    override fun getJobIdsForUserId(userId: Int): List<Int> {
+    override fun getRecommendedJobIdsForUserId(userId: Int): List<Int> {
         return IntStream.range(userId, userId + 3).toList()
     }
 
