@@ -8,7 +8,7 @@ import kotlin.streams.asSequence
 
 @Repository
 class JobSearchDatabaseRepository : JobSearchDatabasePort {
-    private val jobItems = IntStream.range(1, 10)
+    private val jobItems = IntStream.range(1, 11)
         .asSequence()
         .map { JobItem(title = "Job $it") }
         .toList()

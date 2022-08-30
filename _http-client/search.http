@@ -1,2 +1,5 @@
 ### Search for jobs
 GET localhost:8080/search
+
+### Search for specific job (Job 10)
+GET localhost:8080/search?title=Job%2010
