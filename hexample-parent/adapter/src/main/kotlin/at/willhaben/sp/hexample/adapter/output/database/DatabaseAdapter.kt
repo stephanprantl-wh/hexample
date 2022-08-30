@@ -3,11 +3,11 @@ package at.willhaben.sp.hexample.adapter.output.database
 import at.willhaben.sp.hexample.domain.jobsearch.ports.JobSearchDatabasePort
 import at.willhaben.sp.hexample.domain.model.JobOffer
 import at.willhaben.sp.hexample.domain.recommendation.ports.JobRecommendationDatabasePort
-import org.springframework.stereotype.Repository
+import org.springframework.stereotype.Component
 import java.util.stream.IntStream
 import kotlin.streams.asSequence
 
-@Repository
+@Component
 class DatabaseAdapter : JobSearchDatabasePort, JobRecommendationDatabasePort {
     private val jobOffers = IntStream.range(1, 11)
         .asSequence()
