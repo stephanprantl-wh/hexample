@@ -3,7 +3,7 @@ Hexample
 
 #### Demo repository for hexagon architecture and architecture testing with ArchUnit
 
-The demo application is a ordinary spring boot rest api and uses a database and a recommendation engine
+The demo application is an ordinary spring boot rest api and uses a database and a recommendation engine
 (mock adapters).
 
 There are 2 use cases as examples:
